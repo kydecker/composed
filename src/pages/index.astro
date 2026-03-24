@@ -218,14 +218,14 @@
       });
 
       pane
-        .addButton({ title: "A project by Eva Decker" })
-        .on("click", () => (window.location.href = "https://eva.town"));
+        .addButton({ title: "A project by Ky Decker" })
+        .on("click", () => (window.location.href = "https://ky.fyi"));
 
       pane
         .addButton({ title: "View on GitHub" })
         .on(
           "click",
-          () => (window.location.href = "https://github.com/evadecker/composed")
+          () => (window.location.href = "https://github.com/kydecker/composed"),
         );
     };
 
@@ -249,7 +249,7 @@
         const startY = p.lerp(
           margin,
           canvasHeight - margin - lineHeight * 5,
-          i / (staves - 1)
+          i / (staves - 1),
         );
 
         // Each 5-line staff
