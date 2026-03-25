@@ -4,4 +4,4 @@
 
 Alternative forms for sheet music. Let it guide you somewhere new. 🎶
 
-A project by [Eva Decker](https://eva.town).
+A project by [Ky Decker](https://ky.fyi).
