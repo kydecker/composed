@@ -1,2 +1,7 @@
 packages:
-- "src/**"
+  - composed
+allowBuilds:
+  esbuild: false
+  sharp: false
+  simple-git-hooks: true
+  workerd: false
