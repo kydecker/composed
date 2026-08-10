@@ -2,13 +2,31 @@
   "name": "composed",
   "type": "module",
   "version": "0.0.1",
+  "engines": {
+    "node": ">=24.14.0"
+  },
   "scripts": {
-    "preinstall": "npx only-allow pnpm",
+    "prepare": "simple-git-hooks",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"
+  },
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "11.20.0",
+      "onFail": "download"
+    }
+  },
+  "simple-git-hooks": {
+    "pre-commit": "./node_modules/.bin/nano-staged"
+  },
+  "nano-staged": {
+    "*.{astro,cjs,css,js,json,jsonc,jsx,mjs,ts,tsx}": [
+      "biome check --write --no-errors-on-unmatched"
+    ]
   },
   "dependencies": {
     "@astrojs/check": "0.7.0",
@@ -16,15 +34,15 @@
     "p5": "1.9.4",
     "p5.brush": "1.1.2",
     "tweakpane": "4.0.3",
-    "typescript": "5.4.5"
+    "wrangler": "^4.120.0"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.7",
     "@tweakpane/core": "2.0.3",
     "@types/p5": "1.7.6",
     "@typescript-eslint/parser": "7.11.0",
-    "eslint": "9.4.0",
-    "eslint-plugin-astro": "1.2.0",
-    "prettier": "3.2.5",
-    "prettier-plugin-astro": "0.14.0"
+    "nano-staged": "^1.0.2",
+    "simple-git-hooks": "^2.13.1",
+    "typescript": "5.4.5"
   }
 }
